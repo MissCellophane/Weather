@@ -5,7 +5,7 @@ $(document).ready(function(){
         console.log(id);
         $.post('/apis/login_check', {ID:id, PSW:psw}, function(res){
             if (res.status){
-                alert("登录成功");
+                location.href = '/user_page';
             }
             else{
                 alert("用户名或密码不正确");

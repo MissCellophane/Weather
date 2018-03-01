@@ -8,7 +8,7 @@ apis = Blueprint('apis', 'apis')
 def login_check():
     id = unicode(request.values.get('ID'))
     psw = unicode(request.values.get('PSW'))
-    print check(id, psw)
+    # print check(id, psw)
     return jsonify(status=check(id, psw))
 
 
