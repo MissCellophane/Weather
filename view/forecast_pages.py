@@ -6,6 +6,8 @@ forecast_pages = Blueprint('forecast_pages', 'forecast_pages')
 
 @forecast_pages.route('/forecast_page', methods=['get', 'post'])
 def forecast_page():
-    print "1 from forecast_page"
-    WEATHER = request.values.get('weather_data')
-    return render_template('forecast.html', weather=WEATHER)
+    # location = request.values.get('location')
+    # data = forecast_data(location)
+    #
+    # return render_template('forecast.html', T_min=int(data[0].get(u'tmp_min')), T_max=int(data[0].get(u'tmp_max')))
+    return render_template('forecast.html')
