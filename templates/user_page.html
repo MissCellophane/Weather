@@ -4,13 +4,23 @@
     <meta charset="UTF-8">
     <title>用户主页</title>
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
-    <script type="text/javascript" src="../static/forecast.js"></script>
+    <script type="text/javascript" src="../static/user.js"></script>
 </head>
 <body>
 <h1>用户主页</h1>
 <div>
-    <p>城市 <input type="text"></p>
-    <button>查看天气</button>
+    <div>
+        <p>设置偏好城市</p>
+        <div>
+            <div id="inputbox">
+                <input class="city">
+                <br>
+            </div>
+            <button id="add">添加城市</button>
+            <button id="search">查看天气</button>
+            <button id="default">设为默认选项</button>
+        </div>
+    </div>
 </div>
 
 </body>
