@@ -20,7 +20,7 @@ $(document).ready(function() {
         $.each(res.weather_data, function(city, data) {
             city_count += 1;
 
-            var tab_str = "<table border='1' id=" + city +"></table>";
+            var tab_str = "<table class='table' id=" + city +"></table>";
             var table = $(tab_str);
             table.appendTo($("#day1"));
             var cap_str = "<caption><b>" + city + "</b></caption>";

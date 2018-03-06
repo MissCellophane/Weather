@@ -17,25 +17,25 @@ $(document).ready(function(){
     $.post('/apis/forecast_setdefault', {uid: request['ID']}, function(res) {
         if (res.cities) {
             $.each(res.cities, function(index, data) {
-                $("#inputbox").append('<input class="city"> <br>');
-                $($(".city")[count]).val(data);
+                $("#inputbox").append('<input class="form-control"> <br>');
+                $($(".form-control")[count]).val(data);
                 count += 1;
             });
         }
     });
 
-    if ($($(".city")[count]).val()=='') {
-        $($(".city")[count]).remove();
+    if ($($(".form-control")[count]).val()=='') {
+        $($(".form-control")[count]).remove();
     }
 
     $("#add").click(function() {
-        $("#inputbox").append('<input class="city"> <br>');
+        $("#inputbox").append('<input class="form-control"> <br>');
     });
 
 
     $("#default").click(function() {
         var citys = [];
-        $("input.city").each(function() {
+        $("input.form-control").each(function() {
             $(this).val() && citys.push($(this).val());
         });
 
