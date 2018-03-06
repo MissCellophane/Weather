@@ -17,7 +17,6 @@ def preference(uid, cities):
         r = requests.get(hweather_api, params=parameters)
         res = r.json()
         result = res['HeWeather6'][0]
-        print result
         if result['status'] == 'unknown city':
             return 0
 
@@ -31,18 +30,11 @@ def default_cities(uid):
     if not ('ucity' in result):
         return []
     cities = result['ucity']
-    print '----default_cities'
-    print 'cities='
-    for city in cities:
-        print city
     return cities
 
 
 def forecast_data(uid):
-    print 'uid', uid
     user = users.find_one({'uid': uid})
-    print 'user'
-    print user, type(user)
     cities = user['ucity']
 
     loc = {}
@@ -60,17 +52,11 @@ def forecast_data(uid):
             daily = {}
             for key in CONDITIONS:
                 daily[key] = day[CONDITIONS[key]]
-                # print key, daily[key]
 
-            print json.dumps(daily, indent=4)
             data.append(daily)
 
-        print '-----forecast_data'
-        print 'data', data
         loc[LOCATION] =data
 
-    print 'loc'
-    print json.dumps(loc, indent=4)
 
     return loc
 
