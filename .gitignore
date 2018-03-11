@@ -4,3 +4,4 @@
 .swp
 /venv/*
 mongo_test.py
+.DS_store
