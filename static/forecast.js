@@ -20,12 +20,13 @@ $(document).ready(function() {
         $.each(res.weather_data, function(city, data) {
             city_count += 1;
 
-            var tab_str = "<table class='table' id=" + city +"></table>";
+            var cap_str = "<h5>" + city + "</h5>";
+            var cap = $(cap_str);
+            cap.appendTo("#day1");
+
+            var tab_str = "<table class='table non-transparent' id=" + city +"></table>";
             var table = $(tab_str);
             table.appendTo($("#day1"));
-            var cap_str = "<caption><b>" + city + "</b></caption>";
-            var cap = $(cap_str);
-            cap.appendTo(table);
 
             var tr = $("<tr></tr>");
             tr.appendTo(table);
@@ -53,8 +54,8 @@ $(document).ready(function() {
                     var td_str = "<td>" + result + "</td>";
                     var td = $(td_str);
                     var tr= $("<tr></tr>");
-                    var tmp = con_flag[condition] + city_count * 20;
-                    td.appendTo($($("tr").eq(con_flag[condition] + city_count * 20)));
+                    var tmp = con_flag[condition] + city_count * 11;
+                    td.appendTo($($("tr").eq(con_flag[condition] + city_count * 11)));
                 });
 
 
