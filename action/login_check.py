@@ -18,8 +18,8 @@ def check(uid, password):
     user = users.find_one({'uid': uid})
     if not user:
         return 0
-    print password, type(password)
-    print user.get('password'), type(user.get('password'))
+    # print password, type(password)
+    # print user.get('password'), type(user.get('password'))
     return 1 if password == user.get('password') else 0
 
 

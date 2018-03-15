@@ -55,8 +55,7 @@ def forecast_data(uid):
 
             data.append(daily)
 
-        loc[LOCATION] =data
-
+        loc[LOCATION] = data
 
     return loc
 
